@@ -1,0 +1,30 @@
+# settings.yml
+ner:
+  seed: 7788
+  epochs: 1000
+  learning_rate: 5e-5
+  num_labels: 19
+  patience: 5
+  early_stop_threshold: 5
+  lr_decay: 0.1
+  lr_times: 3
+  batch_size: 16
+  train_split: 0.7
+  max_len: 512
+  model_name: "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext"
+  weights_path: "weights/ner"
+  data_file_path: "data/PubMed_ner_data.txt"
+  name_model: "PubMed_ner_data.pt"
+  tokenized_data_path: "data/PubMed_ner_data.pkl" # data/ner_data_tokenized.pkl data/PubMed_ner_data.pkl
+  device: "cuda"
+
+ner_test:
+  seed: 7788
+  num_labels: 19
+  max_len: 512
+  model_name: "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext"
+  weights_path: "weights/ner"
+  name_model: "ner_model_123.pt" # ner_model_123.pt ner_model.pt
+  data_file_path: "data/tmVar3.PubMed_ner.txt"
+  tokenized_data_path: "data/tmVar3.PubMed_ner_tokenized.pkl"
+  device: "cuda"
